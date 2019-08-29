@@ -7,13 +7,7 @@
     <div class="card">
       <ul  id="<%= category.title %>">
         <% category.tasks.each do |task|  %>
-        <li id="<%= task.id%>">
-          <%= task.title  %>
-          <% unless task.deadline.nil? %>
-            , to read: <%= task.deadline.strftime('%D')  %>
-          <% end %>
-          <%= link_to "supprimer", task_path(task.id), method: :delete, remote: true%>
-        </li>
+        <%= render 'tasks/task', task: task %>
         <% end %>
       </ul>
     </div>

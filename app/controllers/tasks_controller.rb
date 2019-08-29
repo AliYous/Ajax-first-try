@@ -23,9 +23,12 @@ before_action :authenticate_user!
 
   def update
     @task = Task.find(params[:id])
-    @task.update(task_params)
-    redirect_to tasks_path
-    flash[:notice] = "Task edited"
+    @task.update(status: true) if params[:name] == 1
+    @task.update(task_params) 
+    respond_to do |format|
+      format.html{redirect_to root_path}
+      format.js {}
+    end
   end
 
   def index
@@ -47,7 +50,7 @@ before_action :authenticate_user!
   private
 
   def task_params
-    params.permit(:title, :deadline, :description, :status)
+    params.permit(:title, :deadline, :description)
   end
 
   def category_params

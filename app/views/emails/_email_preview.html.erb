@@ -1,0 +1,4 @@
+<tr class="<%=email.id%>">
+    <td> <%= link_to email.object, email_path(email.id)%> </td>
+    <td><%=email.body[0..60]%>...</td>
+</tr>

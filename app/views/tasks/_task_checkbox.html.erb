@@ -1,0 +1,1 @@
+<%= check_box_tag :task_checker, 1, task.status, data: { remote: true, url: task_path(task.id), params: {title: task.title, id: task.id, status: !task.status}.to_param, method: "patch" }%>

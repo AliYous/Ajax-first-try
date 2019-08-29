@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Your emails</h2>
+  <p>Click on one email to display its content</p>            
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Object</th>
+        <th>Preview</th>
+      </tr>
+    </thead>
+    <tbody id="email_list">
+    <% emails.each do |email| %>
+        <%= render 'email_preview', email: email %>
+    <% end %>
+
+    </tbody>
+  </table>
+</div>
