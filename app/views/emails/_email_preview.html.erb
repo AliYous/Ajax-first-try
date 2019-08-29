@@ -1,4 +1,9 @@
 <tr id="<%=email.id%>">
     <td> <%= link_to email.object, email_path(email.id), remote: true%> </td>
     <td><%=email.body[0..60]%>...</td>
+    <% if email.read %>
+        <td>read</td>
+    <% else %>
+        <td><b>unread</b></td>
+    <%end%>
 </tr>
