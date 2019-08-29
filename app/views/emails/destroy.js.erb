@@ -1,0 +1,10 @@
+var show_section = document.querySelector('#email_show');
+var emailShown = show_section.lastElementChild;
+while(emailShown) {
+    show_section.removeChild(emailShown);
+    emailShown = show_section.lastElementChild;
+}
+
+var email_preview = document.querySelector('#email_list');
+var to_delete = document.querySelector('#<%= @email.id %>')
+email_preview.removeChild(to_delete);

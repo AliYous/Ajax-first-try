@@ -1,0 +1,7 @@
+var show_section = document.querySelector('#email_show');
+var child = show_section.lastElementChild;
+while(child) {
+    show_section.removeChild(child);
+    child = show_section.lastElementChild;
+}
+show_section.insertAdjacentHTML("beforeend", "<%= j render 'email_show', email: @email %>");

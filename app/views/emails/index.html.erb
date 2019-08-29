@@ -2,8 +2,8 @@
     <div class="col border" style="text-align:center;">
         <%= render 'emails_list', emails: @emails%>
     </div>
-    <div class="col border" style="text-align:center;">
-        <%= render 'email_show' %>
+    <div id="email_show" class="col border" style="text-align:center;">
+        
     </div>
 </div>
 <%= link_to "Recevoir un email", emails_path, method: :post, remote: true%>
