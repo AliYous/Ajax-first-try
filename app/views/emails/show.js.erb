@@ -5,3 +5,5 @@ while(child) {
     child = show_section.lastElementChild;
 }
 show_section.insertAdjacentHTML("beforeend", "<%= j render 'email_show', email: @email %>");
+
+<% @email.update(read: true) %>

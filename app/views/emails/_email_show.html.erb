@@ -6,11 +6,10 @@
         <td>Object: <%=email.object%> </td>
       </tr> 
       <tr>
-      <td>body : <%=email.body%> </td>
+      <td>body : <%=email.body%> </td> 
     </tr> 
     </tbody>
     <%= link_to "supprimer", email_path(email.id), method: :delete, remote: true%> <br>
-    <%= link_to "marquer comme non-lu", email_path(email.id), method: :patch, remote: true%>
-
+      <%= link_to "marquer comme non-lu", email_path(email.id), method: :put, remote: true%>
   </table>
 </div>
